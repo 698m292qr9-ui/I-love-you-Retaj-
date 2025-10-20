@@ -24,11 +24,10 @@
         <div class="main-menu">
             <a href="questions.html" class="option-button">
                 همسات من القلب: هل لديكِ الجواب؟
-                <span class="button-subtitle">Whispers of the heart: Do you have the answer?</span>
+                <span class="button-subtitle"></span>
             </a>
-            <a href="love.html" class="option-button">
-                أنتِ حبي
-                <span class="button-subtitle">You are my love</span>
+            <a href="love.html" class="option-button"> احبك</span>
+                <span class="button-subtitle"></span>
             </a>
         </div>
 
@@ -36,12 +35,7 @@
             <h2>في ليلة قدر.. التقينا</h2>
             <p>التاريخ الذي بدأ عنده كل شيء جميل في حياتي:</p>
             <div class="date-box">25 Jun 2024</div>
-            <audio id="rain-sound" loop preload="auto">
-                <source src="rain.mp3" type="audio/mp3"> 
-            </audio>
-            <button class="button" onclick="toggleRainSound()" style="max-width: 300px; margin-top: 30px; font-size: 1.2em;">أصوات مطر الحب (تشغيل/إيقاف)</button>
-        </div>
-    </div>
+            
 
     <script>
         const SECRET_CODE = "880";
@@ -57,7 +51,7 @@
                 mainContent.style.display = 'block';
                 sessionStorage.setItem('unlocked', 'true'); 
             } else {
-                lockFeedback.textContent = "هذا ليس الرمز السري الصحيح. حاولي تذكر موعدنا الأول.";
+                lockFeedback.textContent ="هذا ليس الرمز السري الصحيح. .";
                 secretCodeInput.value = '';
             }
         }
