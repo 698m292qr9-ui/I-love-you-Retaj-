@@ -9,7 +9,7 @@
 <body>
     <div class="star-background"></div>
     <div class="container">
-        <h1>همسات من القلب: هل لديكِ الجواب؟</h1>
+        <h1 style="color: var(--highlight-text-color);">همسات من القلب: هل لديكِ الجواب؟</h1>
 
         <div id="q1-container">
             <h2>السؤال الأول: ما مقدار حب شادي لأميرته ريتاج؟</h2>
@@ -18,14 +18,14 @@
             <button class="option-button" onclick="handleQ1('wrong')">كحجم ماء البحر</button>
             
             <div id="q1-feedback" class="feedback-box">
-                <p style="color: #fff; font-size: 1.2em; font-weight: bold;">
+                <p style="font-size: 1.4em; font-weight: bold;">
                     **لحظة يا قلبي!**
                 </p>
-                <p style="color: #fff; font-size: 1.1em; margin-top: 10px;">
+                <p style="font-size: 1.2em; margin-top: 10px;">
                     جميع هذه الخيارات خطأ، لأن حب شادي لأميرته ريتاج **ليس له حدود ولا قياس**.
                 </p>
             </div>
-            <a id="q1-next" href="question2.html" class="button" style="display: none; margin-top: 30px;">
+            <a id="q1-next" href="question2.html" class="button" style="display: none; margin-top: 30px; max-width: 300px;">
                 الآن لجوهرة الأسئلة التالية...
             </a>
         </div>
@@ -37,7 +37,7 @@
             const nextButton = document.getElementById('q1-next');
             const buttons = document.querySelectorAll('#q1-container .option-button');
 
-            buttons.forEach(btn => btn.disabled = true); // إيقاف الخيارات
+            buttons.forEach(btn => btn.disabled = true); 
             
             if (choice === 'wrong') {
                 feedbackBox.style.display = 'block';
