@@ -9,34 +9,37 @@
 <body>
     <div class="star-background"></div>
 
-    <div id="lock-screen" class="container" style="text-align: center;">
-        <h2>مرحباً بملكة هذا الكون! أدخلي كلمة سر القلب.</h2>
-        <input type="password" id="secret-code" placeholder="الرمز السري (880)" style="max-width: 200px;">
+    <div id="lock-screen" class="container">
+        <h2>مرحباً بملكة هذا الكون!</h2>
+        <h2 style="color: var(--highlight-text-color);">أدخلي كلمة سر القلب.</h2>
+        <input type="password" id="secret-code" placeholder="الرمز السري (880)" style="max-width: 250px;">
         <button class="button" onclick="checkCode()">افتحي لي الباب</button>
         <p id="lock-feedback" style="color: #e74c3c; margin-top: 10px;"></p>
     </div>
 
     <div id="main-content" class="container" style="display: none;">
-        <h1>أهلاً بكِ في عالمي، يا نجمتي الساطعة! <br> Welcome to my world, my bright star!</h1>
+        <h1 style="color: var(--main-text-color); margin-bottom: 10px;">مرحباً بكِ يا نجمتي الساطعة!</h1> 
+        <h1 style="color: var(--highlight-text-color); font-size: 1.5em; margin-bottom: 40px;">Welcome, My Bright Star</h1>
         
-        <h2 style="margin-top: 40px;">همسات من القلب: هل لديكِ الجواب؟ <br> Whispers of the heart: Do you have the answer?</h2>
         <div class="main-menu">
-            <a href="questions.html" class="option-button">ابدئي اختبار المشاعر!</a>
-        </div>
-
-        <h2 style="margin-top: 40px;">أنتِ حبي <br> You are my love</h2>
-        <div class="main-menu">
-            <a href="love.html" class="option-button">اضغطي هنا لتسمعي نبضات قلبي بكل لغة!</a>
+            <a href="questions.html" class="option-button">
+                همسات من القلب: هل لديكِ الجواب؟
+                <span class="button-subtitle">Whispers of the heart: Do you have the answer?</span>
+            </a>
+            <a href="love.html" class="option-button">
+                أنتِ حبي
+                <span class="button-subtitle">You are my love</span>
+            </a>
         </div>
 
         <div class="meeting-time">
             <h2>في ليلة قدر.. التقينا</h2>
-            <p style="font-size: 1.2em; color: var(--secondary-color);">التاريخ الذي بدأ عنده كل شيء جميل في حياتي:</p>
+            <p>التاريخ الذي بدأ عنده كل شيء جميل في حياتي:</p>
             <div class="date-box">25 Jun 2024</div>
             <audio id="rain-sound" loop preload="auto">
                 <source src="rain.mp3" type="audio/mp3"> 
-                </audio>
-            <button class="button" onclick="toggleRainSound()" style="max-width: 250px; margin-top: 20px;">أصوات مطر الحب (تشغيل/إيقاف)</button>
+            </audio>
+            <button class="button" onclick="toggleRainSound()" style="max-width: 300px; margin-top: 30px; font-size: 1.2em;">أصوات مطر الحب (تشغيل/إيقاف)</button>
         </div>
     </div>
 
@@ -68,7 +71,6 @@
 
         function toggleRainSound() {
             if (rainSound.paused) {
-                // محاولة التشغيل مع معالجة خطأ التشغيل التلقائي
                 rainSound.play().catch(error => console.log("مشكلة في تشغيل الصوت التلقائي:", error)); 
             } else {
                 rainSound.pause();
