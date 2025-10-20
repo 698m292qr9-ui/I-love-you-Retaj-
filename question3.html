@@ -9,22 +9,21 @@
 <body>
     <div class="star-background"></div>
     <div class="container">
-        <h1>السؤال الثالث:</h1>
+        <h1 style="color: var(--highlight-text-color);">السؤال الثالث:</h1>
 
         <div id="q3-container">
             <h2>ما مقدار حبك لشادي؟</h2>
             <form onsubmit="handleQ3(event)">
-                <label for="love-amount">أجيبي بأصدق ما لديك:</label>
+                <label for="love-amount" style="display: block; margin-bottom: 10px; font-size: 1.1em;">أجيبي بأصدق ما لديك:</label>
                 <textarea id="love-amount" rows="5" required placeholder="أكتبي هنا..."></textarea>
-                <button type="submit" class="button">إرسال الإجابة</button>
+                <button type="submit" class="button" style="max-width: 200px;">إرسال الإجابة</button>
             </form>
         </div>
     </div>
 
     <script>
         function handleQ3(event) {
-            event.preventDefault(); // منع الإرسال الافتراضي للصفحة
-            // بغض النظر عن الإجابة، يتم نقلها لصفحة النجاح
+            event.preventDefault(); 
             window.location.href = 'question3_success.html';
         }
     </script>
