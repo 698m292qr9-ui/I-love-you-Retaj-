@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السؤال الأخير</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="star-background"></div>
+    <div class="container">
+        <h1>السؤال الرابع:</h1>
+
+        <div id="q4-container">
+            <h2>ماذا أستحق منك؟</h2>
+            <button class="option-button" onclick="handleQ4()">بوسة (فيديو)</button>
+            <button class="option-button" onclick="handleQ4()">عشر كلمات أحبك (فيديو أو صوت)</button>
+            <button class="option-button" onclick="handleQ4()">صورة جميلة لكِ وأنتِ مبتسمة</button>
+            <button class="option-button" onclick="handleQ4()">جميع ما سبق</button>
+        </div>
+    </div>
+
+    <script>
+        function handleQ4() {
+            // جميع الخيارات صحيحة وتنقلها لصفحة النجاح النهائية
+            window.location.href = 'question4_success.html';
+        }
+    </script>
+</body>
+</html>

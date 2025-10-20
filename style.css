@@ -1,0 +1,178 @@
+/* Custom Arabic Font - نستخدم خط جذاب ورومانسي */
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cairo:wght@400;700&display=swap');
+
+:root {
+    --dark-bg: #0d1117; /* خلفية داكنة جداً */
+    --main-color: #f1c40f; /* لون ذهبي/أصفر للنجوم والنصوص المميزة */
+    --text-color: #ecf0f1; /* لون أبيض فاتح للنص */
+    --secondary-color: #3498db; /* لون ثانوي للأزرار */
+    --romantic-color: #e74c3c; /* لون الحب الداكن */
+    --font-family: 'Cairo', 'Scheherazade New', serif;
+    --small-font-size: 1.1rem; /* خط صغير لكن مقروء */
+}
+
+/* التنسيقات العامة */
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: right;
+    font-size: var(--small-font-size);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+}
+
+/* خلفية النجوم المظلمة */
+.star-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.1) 1px, transparent 1.5px),
+                radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 1px, transparent 3px),
+                var(--dark-bg);
+    background-size: 100px 100px;
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(241, 196, 15, 0.2);
+}
+
+h1, h2, h3 {
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* الأزرار (الخيارات) */
+.option-button, .button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-align: center;
+}
+
+.option-button:hover, .button:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    border-color: var(--secondary-color);
+}
+
+/* نماذج الإدخال */
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: var(--small-font-size);
+}
+
+/* تأثير الخطأ (المعدل: حذف الإيموجي والفيونكة) */
+.feedback-box {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(192, 57, 43, 0.8); /* لون خطأ داكن */
+    border-radius: 10px;
+    display: none; 
+    animation: fadeIn 0.5s ease-out;
+    border: 3px solid var(--romantic-color); 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* تنسيق قائمة التنقل (الرئيسية) */
+.main-menu a {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    margin: 15px 0;
+}
+.main-menu a:hover {
+    background-color: var(--main-color);
+    color: var(--dark-bg);
+}
+
+/* تنسيق قسم وقت اللقاء */
+.meeting-time {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 2px dashed var(--main-color);
+    padding-top: 30px;
+}
+
+.date-box {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--romantic-color); 
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 3px solid var(--romantic-color);
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--romantic-color);
+}
+
+/* تنسيق صفحة 'أحبك' بلغات مختلفة */
+.love-container {
+    text-align: center;
+    cursor: pointer;
+    padding: 50px;
+}
+
+.love-message {
+    font-size: 3em;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    color: var(--main-color);
+    margin-top: 50px;
+}
+
+/* تنسيق الصورة النهائية */
+.final-image-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.final-image {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--main-color);
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملاذ النجمة الساطعة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="star-background"></div>
+
+    <div id="lock-screen" class="container" style="text-align: center;">
+        <h2>مرحباً بملكة هذا الكون! أدخلي كلمة سر القلب.</h2>
+        <input type="password" id="secret-code" placeholder="الرمز السري (880)" style="max-width: 200px;">
+        <button class="button" onclick="checkCode()">افتحي لي الباب</button>
+        <p id="lock-feedback" style="color: #e74c3c; margin-top: 10px;"></p>
+    </div>
+
+    <div id="main-content" class="container" style="display: none;">
+        <h1>أهلاً بكِ في عالمي، يا نجمتي الساطعة! <br> Welcome to my world, my bright star!</h1>
+        
+        <h2 style="margin-top: 40px;">همسات من القلب: هل لديكِ الجواب؟ <br> Whispers of the heart: Do you have the answer?</h2>
+        <div class="main-menu">
+            <a href="questions.html" class="option-button">ابدئي اختبار المشاعر!</a>
+        </div>
+
+        <h2 style="margin-top: 40px;">أنتِ حبي <br> You are my love</h2>
+        <div class="main-menu">
+            <a href="love.html" class="option-button">اضغطي هنا لتسمعي نبضات قلبي بكل لغة!</a>
+        </div>
+
+        <div class="meeting-time">
+            <h2>في ليلة قدر.. التقينا</h2>
+            <p style="font-size: 1.2em; color: var(--secondary-color);">التاريخ الذي بدأ عنده كل شيء جميل في حياتي:</p>
+            <div class="date-box">25 Jun 2024</div>
+            <audio id="rain-sound" loop preload="auto">
+                <source src="rain.mp3" type="audio/mp3"> 
+                </audio>
+            <button class="button" onclick="toggleRainSound()" style="max-width: 250px; margin-top: 20px;">أصوات مطر الحب (تشغيل/إيقاف)</button>
+        </div>
+    </div>
+
+    <script>
+        const SECRET_CODE = "880";
+        const lockScreen = document.getElementById('lock-screen');
+        const mainContent = document.getElementById('main-content');
+        const secretCodeInput = document.getElementById('secret-code');
+        const lockFeedback = document.getElementById('lock-feedback');
+        const rainSound = document.getElementById('rain-sound');
+
+        function checkCode() {
+            if (secretCodeInput.value === SECRET_CODE) {
+                lockScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+                sessionStorage.setItem('unlocked', 'true'); 
+            } else {
+                lockFeedback.textContent = "هذا ليس الرمز السري الصحيح. حاولي تذكر موعدنا الأول.";
+                secretCodeInput.value = '';
+            }
+        }
+
+        window.onload = function() {
+            if (sessionStorage.getItem('unlocked') === 'true') {
+                lockScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+            }
+        };
+
+        function toggleRainSound() {
+            if (rainSound.paused) {
+                // محاولة التشغيل مع معالجة خطأ التشغيل التلقائي
+                rainSound.play().catch(error => console.log("مشكلة في تشغيل الصوت التلقائي:", error)); 
+            } else {
+                rainSound.pause();
+            }
+        }
+    </script>
+</body>
+</html>

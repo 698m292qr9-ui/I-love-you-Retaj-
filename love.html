@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحبك بكل اللغات</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيق خاص للخلفية المتناسقة والمختلفة */
+        body {
+            background-image: linear-gradient(to top right, #9b59b6, #3498db);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container love-container" onclick="displayNextLove()">
+        <h1>أنتِ الحب الذي لا ينتهي <br> You are the endless love</h1>
+        <p style="font-size: 1.5em; color: var(--main-color);">اضغطي على الشاشة لتعرفي حقيقة شعوري الخالد</p>
+        
+        <div id="love-display" class="love-message">
+            </div>
+    </div>
+
+    <script>
+        // قائمة "أحبك" بلغات مختلفة
+        const loveMessages = [
+            { text: "أحبك", lang: "العربية" },
+            { text: "I Love You", lang: "English" },
+            { text: "Je t'aime", lang: "Français" },
+            { text: "Te amo", lang: "Español" },
+            { text: "Ich liebe dich", lang: "Deutsch" },
+            { text: "愛してる (Aishiteru)", lang: "Japanese" },
+            { text: "사랑해 (Saranghae)", lang: "Korean" },
+            { text: "Mi amor", lang: "Italiano" },
+            { text: "Я тебя люблю (Ya tebya lyublyu)", lang: "Russian" },
+            { text: "Seni seviyorum", lang: "Turkish" }
+        ];
+
+        let currentLoveIndex = 0;
+        const loveDisplay = document.getElementById('love-display');
+
+        function displayNextLove() {
+            if (currentLoveIndex < loveMessages.length) {
+                const message = loveMessages[currentLoveIndex];
+                loveDisplay.innerHTML = `${message.text} <br> <span style="font-size: 0.5em; opacity: 0.7;">(${message.lang})</span>`;
+                loveDisplay.style.color = getRandomColor(); 
+                currentLoveIndex++;
+            } else {
+                loveDisplay.textContent = "ويشهد الكون... أحبك بكل اللغات وإلى الأبد! ❤️";
+                loveDisplay.style.color = 'var(--main-color)';
+            }
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
