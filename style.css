@@ -3,15 +3,15 @@
 
 :root {
     --dark-bg: #1a0033; /* خلفية أرجوانية داكنة جداً */
-    --star-color: #ffffff; /* لون النجوم أبيض فاتح */
+    --star-color: #ffffff; /* لون النجوم أزرق فاتح */
     --main-text-color: #ffffff; /* لون النص الرئيسي أبيض */
-    --highlight-text-color: #f1c40f; /* لون ذهبي/أصفر للعناوين المميزة */
+    --highlight-text-color: #f1c40f; /* لون ازرق غامق/أبيض للعناوين المميزة */
     --button-bg: rgba(70, 0, 100, 0.7); /* خلفية زر أرجوانية شفافة */
-    --button-border: #f1c40f; /* حدود الزر باللون الذهبي */
-    --button-hover-bg: rgba(100, 0, 150, 0.8); /* خلفية زر عند التحويم */
-    --container-bg: rgba(0, 0, 0, 0.3); /* خلفية حاوية شفافة أكثر */
+    --button-border: #f1c40f; /* */
+    --button-hover-bg: rgba(100, 0, 150, 0.8); /* */
+    --container-bg: rgba(0, 0, 0, 0.3); /* */
     --font-family: 'Cairo', sans-serif;
-    --base-font-size: 1.2rem; /* خط أساسي أكبر قليلاً */
+    --base-font-size: 1.2rem; /* خط أساسي أكبراصغر */
 }
 
 /* التنسيقات العامة */
@@ -24,20 +24,20 @@ body {
     direction: rtl;
     text-align: right;
     font-size: var(--base-font-size);
-    line-height: 1.6;
+    line-height: 1 ;
     min-height: 100vh;
     display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.5s ease;
+    transition: background-color 1.5s ease;
 }
 
 /* خلفية النجوم (أكثر وضوحاً كما في الصورة) */
 .star-background {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 2;
+    left: 3;
     width: 100%;
     height: 100%;
     background-image: 
@@ -54,25 +54,25 @@ body {
 
 .container {
     width: 90%;
-    max-width: 600px; /* لتقريب الحجم من الصورة */
+    max-width: 200px; /* لتقريب الحجم من الصورة */
     margin: 20px auto;
     padding: 30px;
-    background-color: var(--container-bg); /* خلفية شفافة للحاوية */
+    background-color: var(--container-bg); /* خلفية شفافة صغيرة */
     border-radius: 15px; /* حواف دائرية */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* ظل خفيف */
-    text-align: center; /* توسيط المحتوى داخل الحاوية */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* */
+    text-align: center; /* تصغير المحتوى داخل الحاوية */
 }
 
 h1, h2, h3 {
     color: var(--main-text-color); /* العناوين الرئيسية باللون الأبيض */
     text-align: center;
     margin-bottom: 20px;
-    font-weight: bold; /* خط سميك */
+    font-weight: bold; /* خط رفيع وصغير */
 }
 
 h1 {
-    font-size: 2.5em; /* حجم كبير للعنوان الرئيسي */
-    color: var(--highlight-text-color); /* لون ذهبي للعنوان الرئيسي */
+    font-size: 2.5em; /* حجم صغير للعنوان الرئيسي */
+    color: var(--highlight-text-color); /* لون ازرق غامق للعنوان الرئيسي */
     margin-bottom: 30px;
 }
 
@@ -80,18 +80,18 @@ h1 {
 .option-button, .button {
     display: block;
     width: 100%;
-    padding: 20px 25px; /* حجم أكبر للزر */
-    margin: 20px auto; /* توسيط وزيادة المسافة */
-    border: 3px solid var(--button-border); /* حدود ذهبية سميكة */
+    padding: 20px 25px; /* حجم صغير للزر */
+    margin: 20px auto; /* تصغير وزيادة المسافة */
+    border: 3px solid var(--button-border); /* */
     background-color: var(--button-bg); 
     color: var(--main-text-color);
-    font-size: 1.5em; /* خط أكبر داخل الزر */
+    font-size: 1.5em; /* خط أصغر داخل الزر */
     cursor: pointer;
-    border-radius: 15px; /* حواف دائرية واضحة */
+    border-radius: 15px; /* */
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* ظل للزر */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*  */
 }
 
 .option-button:hover, .button:hover {
