@@ -8,29 +8,29 @@
     <style>
         /* تنسيق خاص للخلفية المتناسقة والمختلفة */
         body {
-            background-image: linear-gradient(to top right, #9b59b6, #3498db);
+            background-image: linear-gradient(to top right, #4a0072, #2c003e); /* خلفية أرجوانية متدرجة */
             background-size: cover;
             background-attachment: fixed;
         }
         .container {
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            box-shadow: none;
+            background-color: rgba(0, 0, 0, 0.3); /* خلفية شفافة للحاوية */
+            backdrop-filter: blur(3px); /* تأثير ضبابي خفيف */
+            border: 3px solid var(--highlight-text-color); /* حدود ذهبية */
+            box-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
         }
     </style>
 </head>
 <body>
     <div class="container love-container" onclick="displayNextLove()">
-        <h1>أنتِ الحب الذي لا ينتهي <br> You are the endless love</h1>
-        <p style="font-size: 1.5em; color: var(--main-color);">اضغطي على الشاشة لتعرفي حقيقة شعوري الخالد</p>
+        <h1 style="color: var(--highlight-text-color);">أنتِ الحب الذي لا ينتهي</h1>
+        <h2 style="color: var(--main-text-color); font-size: 1.5em; margin-top: 10px; margin-bottom: 40px;">You are the endless love</h2>
+        <p style="font-size: 1.3em; color: var(--main-text-color);">اضغطي على الشاشة لتعرفي حقيقة شعوري الخالد</p>
         
         <div id="love-display" class="love-message">
             </div>
     </div>
 
     <script>
-        // قائمة "أحبك" بلغات مختلفة
         const loveMessages = [
             { text: "أحبك", lang: "العربية" },
             { text: "I Love You", lang: "English" },
@@ -55,7 +55,7 @@
                 currentLoveIndex++;
             } else {
                 loveDisplay.textContent = "ويشهد الكون... أحبك بكل اللغات وإلى الأبد! ❤️";
-                loveDisplay.style.color = 'var(--main-color)';
+                loveDisplay.style.color = 'var(--highlight-text-color)';
             }
         }
 
